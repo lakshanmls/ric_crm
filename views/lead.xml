@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<flectra>
+
+<!-- form view of the crm.lead model -->
+<record id="crm_lead_inherit" model="ir.ui.view">
+    <field name="name">crm.lead.inherit</field>
+    <field name="model">crm.lead</field>
+    <field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
+    <field name="arch" type="xml">
+    <field name="partner_id" position="replace">
+        <field name = 'date'/>
+    </field>
+    <field name="website" position="after">
+        <field name="course" widget="many2many_tags"/>     
+        <field name="programme_name"/>
+    </field>
+    <field name="contact_name" position="replace">
+        <field name="user_id"/>
+    </field>
+    <field name="partner_name" position="replace">
+        <field name="first_name"/> 
+    </field>
+    <field name="email_from" position="replace">
+        <field name="last_name"/>  
+    </field>  
+    <field name="street" position="replace">
+    </field>
+    <field name="street2" position="replace">
+    </field>
+    <field name="city" position="replace">
+    </field>  
+    <field name="state_id" position="replace">
+    </field>
+    <field name="zip" position="replace">
+    </field>
+    <field name="country_id" position="replace">
+    </field>
+    <!-- <label name="street" position="replace">
+    </label> -->
+    <field name="title" position="replace">
+    </field>
+    <field name="tag_ids" position="replace">
+    </field>
+    <field name="website" position="replace">
+        <field name="mobile"/>
+    </field>
+    <field name="function" position="replace">
+        <field name="email_from"/>
+    </field>
+    <!-- <field name="street2" position="replace">
+        <field name="priority"/>
+    </field> -->
+    <field name="phone" position="replace">
+        <field name="source_id"/>
+    </field>
+    <!-- <field name="city" position="replace">
+        <field name="medium_id"/>
+    </field> -->
+    <field name="mobile" position="replace">
+        <field name="programme_type"/>
+    </field>
+    <!-- <field name="team_id" position="replace">
+        <field name="other_information"/>
+    </field> -->
+    </field>
+</record>
+
+
+
+<!-- form view of the Opportunity -->
+<record id="crm_opportunity_inherit" model="ir.ui.view">
+    <field name="name">crm.opportunity.inherit</field>
+    <field name="model">crm.lead</field>
+    <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+    <field name="arch" type="xml">
+    <button name="action_set_won_rainbowman" position="before">
+    <button name="action_email_send_contact" type="object" string="Send Course Details" class="oe_highlight"/>
+    </button>
+    <field name="phone" position="after">   
+        <field name="programme_name"/>
+    </field>
+    </field>
+    </record>
+    
+</flectra>

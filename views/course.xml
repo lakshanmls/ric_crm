@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<flectra>
+
+<!-- form view of the op.course model -->
+<record id="op_course_inherit" model="ir.ui.view">
+    <field name="name">op.course.inherit</field>
+    <field name="model">op.course</field>
+    <field name="inherit_id" ref="openeducat_core.view_op_course_form"/>
+    <field name="arch" type="xml">
+    <field name="min_unit_load" position="after">
+        <field name = 'description'/>
+    </field>
+    </field>
+</record>
+
+</flectra>
